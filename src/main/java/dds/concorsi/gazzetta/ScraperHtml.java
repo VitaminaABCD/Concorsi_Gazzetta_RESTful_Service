@@ -33,7 +33,7 @@ public class ScraperHtml extends Observable implements Scraper
         Document gazzettaDocument = null;
         try
         {
-            gazzettaDocument = Jsoup.connect("http://www.gazzettaufficiale.it/ricercaArchivioCompleto/concorsi/" + year).get();
+            gazzettaDocument = Jsoup.connect("http://www.gazzettaufficiale.it/ricercaArchivioCompleto/concorsi/" + year).timeout(40 * 1000).get();
 
         }
         catch (IOException e)
